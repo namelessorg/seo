@@ -50,4 +50,17 @@
 		wpexResponsiveNav();
 	} );
 
+	$(".form-btn").click(function(event){
+		event.preventDefault();
+		$('#popup').show();
+		$('.backdor-popup').show();
+	});
+
+	$(".popup-close").click(function(){
+		$('#popup').hide();
+		$('.backdor-popup').hide();
+	});
+
+	
+
 } )( jQuery );

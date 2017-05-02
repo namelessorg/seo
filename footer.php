@@ -64,8 +64,25 @@
 		</div><!-- #footer-bottom -->
 
 	</div><!-- #wrap -->
-
+	<!-- popup -->
+	<div id="popup" class="popup">
+		<div class="popup-content">
+			<?=do_shortcode('[contact-form-7 id="154" title="Без названия"]');?>
+		</div>
+	</div>
+	<div class="backdor-popup"></div>
+	<!-- popup end -->
 <?php wp_footer(); ?>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script type="text/javascript">
+	$(".slider").slick({
+		dots: true,
+		infinite: true,
+		speed: 300,
+		slidesToShow: 1,
+		adaptiveHeight: true
+	});
+</script>
 </body>
 </html>

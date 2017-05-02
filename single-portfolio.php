@@ -72,6 +72,13 @@ get_header(); ?>
 
 		</div><!-- #primary -->
 
+		<div class="about-items clearfix">
+			<span class="about-item price-item">Цена: <?php the_field("price_item") ?></span>
+			<span class="about-item">Наличиние: Есть</span>
+			<span class="about-item">Размер: <?php the_field("size_item") ?></span>
+			<a class="btn-main mt15 form-btn" href="">заказать</a>
+		</div>
+
 	<?php endwhile; ?>
 	
 <?php get_sidebar(); ?>

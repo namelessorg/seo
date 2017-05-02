@@ -12,7 +12,7 @@
 // Create Social Array
 if ( ! function_exists( 'wpex_social_links' ) ) {
 	function wpex_social_links() {
-		$social_icons = array('twitter','google','facebook','linkedin','flickr','pinterest','github','behance','dribbble','forrst','youtube','vimeo','skype','paypal','envato','gowalla','icloud','evernote','quora','wordpress','rss');
+		$social_icons = array('twitter','google','facebook','linkedin','flickr','pinterest','github','behance','dribbble','forrst','youtube','vimeo','skype','paypal','envato','gowalla','icloud','evernote','quora','wordpress','rss','vkontakte', 'od');
 		return apply_filters('wpex_social_links', $social_icons);
 	}
 }
