@@ -31,3 +31,33 @@
 	.related-posts .span_8 { width: 32.0%; margin-left: 2%; }
 	.related-posts .clr-margin { margin-left: 0 }
 }
+@media screen and (max-width: 1095px) {
+	.slide-block-wrap {
+	    width: 50%;
+	    float: left;
+	    margin-bottom: 13px;
+	    box-sizing: border-box;
+	    margin: 0px; 
+	}
+	.slide-block {
+	    position: relative;
+	    height: 150px;
+	    margin-right: 0px;
+	    max-width: auto;
+	}
+	.slide-block-wrap:nth-child(3) {
+		width: 100%;
+	}
+	.slider-wrap {
+	    width: 100%;
+	    padding-right: 0px; 
+	}
+}
+@media screen and (max-width: 767px) {
+	.slide-block-wrap {
+		width: 100%;
+	}
+	.about-item {
+		padding: 0px;
+	}
+}

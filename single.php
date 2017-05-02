@@ -12,7 +12,7 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
 	<header class="page-header">
-		<h1 class="page-header-title"><?php the_title(); ?></h1>
+		<h1 class="page-header-title"><?php the_title(); ?>123</h1>
 		<nav class="single-nav clr"> 
 			<?php next_post_link('<div class="single-nav-left">%link</div>', '<span class="fa fa-chevron-left"></span>', false); ?>
 			<?php previous_post_link('<div class="single-nav-right">%link</div>', '<span class="fa fa-chevron-right"></span>', false); ?>

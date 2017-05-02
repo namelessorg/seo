@@ -22,7 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script><![endif]-->
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link href="https://fonts.googleapis.com/css?family=Cuprum:400,700" rel="stylesheet">
 	<?php wp_head(); ?>
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
 	<!--[if IE 8]><link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/ie8.css" media="screen"><![endif]-->
 </head>
 
@@ -61,20 +63,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<div class="masthead-right">
 
-				<?php if ( $aside = wpex_get_option( 'masterhead_right', '<span class="fa fa-phone"></i>Call us: 999-99-99' ) ) : ?>
-					<div class="masthead-right-content"><?php echo wp_kses_post( $aside ); ?></div>
-				<?php endif; ?>
-
-				<?php if ( wpex_get_option( 'masthead_search', '1' ) ) : ?>
-
-					<div class="masthead-search clr">
-						<form method="get" id="searchform" class="searchform" action="<?php echo esc_url( $home_url ); ?>" role="search">
-							<input type="search" class="field" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" id="s" placeholder="<?php _e( 'Search', 'pytheas' ); ?>&hellip;" />
-							<button type="submit" class="submit" id="searchsubmit"><span class="fa fa-search"></span></button>
-						</form>
-					</div><!-- /masthead-search -->
-
-				<?php endif; ?>
+				<div class="contacts">
+					<div class="contacts-tel">
+						<span class="tel-number">+7 (812) 555-05-55</span>
+					</div>
+					<div class="contacts-adress">
+						<span class="adress-text">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</span>
+					</div>
+				</div>
 
 			</div><!-- .masthead-right -->
 
@@ -106,7 +102,59 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php endif; ?>
 
 		</div><!-- #navbar -->
-		
+		<?php if ( is_page()) { ?>
+			<div class="main-slider clearfix">
+				<div class="slide-block-wrap">
+					<div class="slide-block block-1">
+						<span class="slide-block__title">Бытовка</span>
+						<a class="slide-block__btn" href="/portfolio/">подробнее</a>
+					</div>
+				</div>
+				<div class="slide-block-wrap">
+					<div class="slide-block block-2">
+						<span class="slide-block__title">Модульные здания</span>
+						<a class="slide-block__btn" href="/modulnye-zdaniya/">подробнее</a>
+					</div>
+				</div>
+				<div class="slide-block-wrap">
+					<div class="slide-block block-3">
+						<span class="slide-block__title">Посты охраны</span>
+						<a class="slide-block__btn" href="/posty-ohrany/">подробнее</a>
+					</div>
+				</div>
+				<div class="slider-wrap">
+					<div class="slider">
+					  <div class="slide slide-1">
+							<div class="header-slide">
+								<span class="slide-title">slide title</span>
+							</div>
+							<a class="btn-main btn-slider" href="/portfolio/">перейти в каталог</a>
+						</div>
+					  <div class="slide slide-2">
+							<div class="header-slide">
+								<span class="slide-title">slide title</span>
+							</div>
+							<a class="btn-main btn-slider" href="/portfolio/">подробнее</a>
+						</div>
+					</div>
+				</div>
+				<div class="slide-block-wrap">
+					<div class="slide-block block-4">
+						<span class="slide-block__title">Готовые решения</span>
+						<a class="slide-block__btn" href="/gotovye-resheniya/">подробнее</a>
+					</div>
+				</div>
+				<div class="slide-block-wrap">
+					<div class="slide-block block-5">
+						<span class="slide-block__title">Хиты продаж</span>
+						<a class="slide-block__btn" href="/dachnye-domiki/">подробнее</a>
+					</div>
+				</div>
+
+			</div>
+		<?php } ?>
+
+
 	<div id="main" class="site-main row clr fitvids">
 
 		<?php if ( is_singular( 'page' ) && has_post_thumbnail() ) : ?>

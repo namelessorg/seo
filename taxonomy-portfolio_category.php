@@ -12,7 +12,6 @@
  */
 
 get_header(); ?>
-
 	<header class="page-header clr">
 		<h1 class="page-header-title"><?php echo single_term_title(); ?></h1>
 		<?php if ( category_description() ) : ?>
@@ -23,9 +22,9 @@ get_header(); ?>
 			<?php $portfolio_terms = get_terms( 'portfolio_category', array( 'orderby' => 'name', 'order' => 'ASC' ) ); ?>
 			<?php if ( $portfolio_terms ) : ?>
 				<ul class="tax-archives-filter dropdown-menu clr">
-				<li class="browse"><a href="#" title="<?php _e( 'Browse', 'pytheas' ); ?>"><?php _e( 'Browse', 'pytheas' ); ?> <?php echo $posttype_obj->label; ?><i class="fa fa-caret-down"></i></a>
+				<li class="browse asdasd"><a href="#" title="<?php _e( 'Browse', 'pytheas' ); ?>"><?php _e( 'Browse', 'pytheas' ); ?><?php echo $posttype_obj->label; ?><i class="fa fa-caret-down"></i></a>
 						<ul>
-							<li><a href="<?php echo get_post_type_archive_link( 'portfolio' ); ?>" title="<?php echo $posttype_obj->label; ?>" class="active"><?php _e( 'All', 'pytheas' ); ?></a></li>
+							<li><a href="<?php echo get_post_type_archive_link( 'portfolio' ); ?>" title="<?php echo $posttype_obj->label; ?>" class="active"><?php _e( 'All', 'pytheas' ); ?>asdasds</a></li>
 							<?php foreach( $portfolio_terms as $portfolio_term ) : ?>
 								<li><a href="<?php echo esc_url( get_term_link( $portfolio_term->slug, 'portfolio_category' ) ); ?>" title="<?php echo esc_attr( $portfolio_term->name ); ?>"><?php echo esc_html( $portfolio_term->name ); ?></a></li>
 							<?php endforeach; ?>

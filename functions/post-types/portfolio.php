@@ -21,7 +21,7 @@ if ( ! class_exists( 'Symple_Portfolio_Post_Type' ) ) :
 
 		public function portfolio_init() {
 			$labels = array(
-				'name'					=> __( 'Portfolio', 'pytheas' ),
+				'name'					=> __( 'Категория', 'pytheas' ),
 				'singular_name'			=> __( 'Portfolio Item', 'pytheas' ),
 				'add_new'				=> __( 'Add New Item', 'pytheas' ),
 				'add_new_item'			=> __( 'Add New Portfolio Item', 'pytheas' ),

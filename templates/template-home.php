@@ -11,7 +11,10 @@
 
 get_header(); ?>
 
+<?php /*
 <?php get_template_part( 'content', 'slider' ); ?>
+*/ ?>
+
 
 <div id="home-wrap" class="clr">
 
