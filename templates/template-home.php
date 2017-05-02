@@ -32,51 +32,9 @@ get_header(); ?>
 		
 	<?php }
 	
-	/*--------------------------------------*/
-	/* Recent Services
-	/*--------------------------------------*/
-	if ( wpex_get_option( 'home_services', '1' ) ) : ?>
-		
-		<?php
-		// Query services
-		$wpex_query = new WP_Query( array(
-			'post_type'		=> 'services',
-			'showposts'		=> wpex_get_option( 'home_services_count', '6' ),
-			'no_found_rows'	=> true,
-		) );
-			
-		// Display services if some exist
-		if ( $wpex_query->posts ) : ?>
-		
-			<div id="home-services" class="clr home-block">
 
-				<?php if ( $title = wpex_get_option( 'home_services_title', __( 'Services', 'pytheas' ) ) ) : ?>
-					<h2 class="heading"><span><?php echo wp_kses_post( $title ); ?></span></h2>
-				<?php endif; ?>
 
-				<div class="row clr">
-					<?php
-					$wpex_count=0;
-					foreach( $wpex_query->posts as $post ) : setup_postdata( $post );
-						$wpex_count++;
-						get_template_part( 'content', 'services' );
-						if ( $wpex_count==3 ) {
-							echo '<div class="clr"></div>';
-							$wpex_count=0;
-						}
-					endforeach; ?>
 
-				 </div><!-- .row -->
-
-			</div><!-- #home-services -->
-
-		<?php endif; ?>
-
-		<?php wp_reset_postdata(); ?>
-		
-	<?php endif; ?>
-
-	<?php
 	/*--------------------------------------*/
 	/* Recent Portfolio
 	/*--------------------------------------*/
@@ -118,6 +76,53 @@ get_header(); ?>
 		
 	<?php endif; ?>
 	
+	
+	/*--------------------------------------*/
+	/* Recent Services
+	/*--------------------------------------*/
+	<?php if ( wpex_get_option( 'home_services', '1' ) ) : ?>
+		
+		<?php
+		// Query services
+		$wpex_query = new WP_Query( array(
+			'post_type'		=> 'services',
+			'showposts'		=> wpex_get_option( 'home_services_count', '6' ),
+			'no_found_rows'	=> true,
+		) );
+			
+		// Display services if some exist
+		if ( $wpex_query->posts ) : ?>
+		
+			<div id="home-services" class="clr home-block">
+
+				<?php if ( $title = wpex_get_option( 'home_services_title', __( 'Services', 'pytheas' ) ) ) : ?>
+					<h2 class="heading"><span><?php echo wp_kses_post( $title ); ?></span></h2>
+				<?php endif; ?>
+
+				<div class="row clr">
+					<?php
+					$wpex_count=0;
+					foreach( $wpex_query->posts as $post ) : setup_postdata( $post );
+						$wpex_count++;
+						get_template_part( 'content', 'services' );
+						if ( $wpex_count==3 ) {
+							echo '<div class="clr"></div>';
+							$wpex_count=0;
+						}
+					endforeach; ?>
+
+				 </div><!-- .row -->
+
+			</div><!-- #home-services -->
+
+		<?php endif; ?>
+
+		<?php wp_reset_postdata(); ?>
+		
+	<?php endif; ?>
+
+
+
 	<?php
 	/*--------------------------------------*/
 	/* Recent Standard Posts
